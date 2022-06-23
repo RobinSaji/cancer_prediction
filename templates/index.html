@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@200;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="static\static.css">
+        <meta charset="UTF-8">
+        <title>Cancer Tumor Classification</title>
+    </head>
+    <body>
+        <div class="login">
+            <div class="container">
+                <div class="title">Cancer type Prediction </div>
+                <br>
+                <form action="{{url_for('predict')}}"method="post">
+                    <div class="details">
+                       
+                            <input class="inputbox" type="text" name="radius_mean" placeholder="Enter the radius_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="texture_mean" placeholder="Enter the texture_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="perimeter_mean" placeholder="Enter the perimeter_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="area_mean" placeholder="Enter the area_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="smoothness_mean" placeholder="Enter the smoothness_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="compactness_mean" placeholder="Enter the compactness_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="concavity_mean" placeholder="Enter the concavity_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="concave_points_mean" placeholder="Enter the concave points_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="symmetry_mean" placeholder="Enter the symmetry_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="fractal_dimension_mean" placeholder="Enter the fractal_dimension_mean:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="radius_se" placeholder="Enter the radius_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="texture_se" placeholder="Enter the texture_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="perimeter_se" placeholder="Enter the perimeter_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="area_se" placeholder="Enter the area_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="smoothness_se" placeholder="Enter the smoothness_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="compactness_se" placeholder="Enter the compactness_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="concavity_se" placeholder="Enter the concavity_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="concave_points_se" placeholder="Enter the concave points_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="symmetry_se" placeholder="Enter the symmetry_se:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="fractal_dimension_se" placeholder="Enter the fractal_dimension_se:'," required="required"><br><br>
+                            <input class="inputbox" type="text" name="radius_worst" placeholder="Enter the radius_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="texture_worst" placeholder="Enter the texture_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="perimeter_worst" placeholder="Enter the perimeter_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="area_worst" placeholder="Enter the area_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="smoothness_worst" placeholder="smoothness_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="compactness_worst" placeholder="Enter the compactness_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="concavity_worst" placeholder="Enter the concavity_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="concave_points_worst" placeholder="Enter the concave_points_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="symmetry_worst" placeholder="Enter the symmetry_worst:" required="required"><br><br>
+                            <input class="inputbox" type="text" name="fractal_dimension_worst" placeholder="Enter the fractal_dimension_worst:" required="required"><br><br>
+                           
+
+                    </div>
+                    <button type="submit" class="submit">Predict</button><br><br>
+
+                   
+                </form>
+
+            </div>
+            
+            <br>
+            <br>
+           <div class="jinja">{{classification_text}}</div> 
+           <h3>malignant is 1 and 0 is for benign</h3>
+        </div>
+    </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/static.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cancer detection dataset</title>
+</head>
+<body>
+    <h2>winscon cancer type detection</h2>
+    <div>
+        <div class="">
+            <form action="{{url_for('predict')}}" method="post">
+                <input type="number" step="any" name="radius_mean" id="radius_mean" placeholder="radius_mean"><br><br>   
+
+                <input type="number" step="any" name="texture_mean" id="texture_mean" placeholder="texture_mean"><br><br>
+                <input type="number" step="any" name="perimeter_mean" id="perimeter_mean" placeholder="perimeter_mean"><br><br>
+                <input type="number" step="any" name="area_mean" id="area_mean" placeholder="area_mean"><br><br>
+                <input type="number" step="any" name="smoothness_mean" id="smoothness_mean" placeholder="smoothness_mean"><br><br>
+                <input type="number" step="any" name="compactness_mean" id="compactness_mean" placeholder="compactness_mean"><br><br>
+                <input type="number" step="any" name="concavity_mean" id="concavity_mean" placeholder="concavity_mean"><br><br>
+                <input type="number" step="any" name="concavepoints_mean" id="concavepoints_mean" placeholder="concavepoints_mean"><br><br>
+                <input type="number" step="any" name="symmetry_mean" id="symmetry_mean" placeholder="symmetry_mean"><br><br>
+                <input type="number" step="any" name="fractal_dimension_mean" id="fractal_dimension_mean" placeholder="fractal_dimension_mean"><br><br>
+                <input type="number" step="any" name="radius_se" id="radius_se" placeholder="radius_se"><br><br>
+                <input type="number" step="any" name="texture_se" id="texture_se" placeholder="texture_se"><br><br>
+                <input type="number" step="any" name="perimeter_se" id="perimeter_se" placeholder="perimeter_se"><br><br>
+                <input type="number" step="any" name="area_se" id="area_se" placeholder="area_se"><br><br>
+                <input type="number" step="any" name="smoothness_se" id="smoothness_se" placeholder="smoothness_se"><br><br>
+                <input type="number" step="any" name="compactness_se" id="compactness_se" placeholder="compactness_se"><br><br>
+                <input type="number" step="any" name="concavity_se" id="concavity_se" placeholder="concavity_se"><br><br>
+                <input type="number" step="any" name="concave points_se" id="concave points_se" placeholder="concave points_se"><br><br>
+                <input type="number" step="any" name="symmetry_se" id="symmetry_se" placeholder="symmetry_se"><br><br>
+                <input type="number" step="any" name="fractal_dimension_se" id="fractal_dimension_se" placeholder="fractal_dimension_se"><br><br>
+                <input type="number" step="any" name="radius_worst" id="radius_worst" placeholder="radius_worst"><br><br>
+                <input type="number" step="any" name="texture_worst" id="texture_worst" placeholder="texture_worst"><br><br>
+                <input type="number" step="any" name="perimeter_worst" id="perimeter_worst" placeholder="perimeter_worst"><br><br>
+                <input type="number" step="any" name="area_worst" id="area_worst" placeholder="area_worst"><br><br>
+                <input type="number" step="any" name="smoothness_worst" id="smoothness_worst" placeholder="smoothness_worst"><br><br>
+                <input type="number" step="any" name="compactness_worst" id="compactness_worst" placeholder="compactness_worst"><br><br>
+                <input type="number" step="any" name="concavity_worst" id="concavity_worst" placeholder="concavity_worst"><br><br>
+                <input type="number" step="any" name="concave points_worst" id="concave points_worst" placeholder="concave points_worst"><br><br>
+                <input type="number" step="any" name="symmetry_worst" id="symmetry_worst" placeholder="symmetry_worst"><br><br>
+                <input type="number" step="any" name="fractal_dimension_worst" id="fractal_dimension_worst" placeholder="fractal_dimension_worst"><br><br>
+                <button type="submit" id="submit" name="submit">submit</button>
+
+                
+            </form>    
+        </div>
+    </div>
+    {{classification_text }}
+</body>
+</html> -->

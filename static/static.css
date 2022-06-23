@@ -1,0 +1,78 @@
+body{
+    display: flex;
+    /* height: 100vh; */
+    /* background-color: blue; */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-image: url("../static/fight-against-cancer.jpg");
+   
+}
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    /* transform: translate(-50%,-50%); */
+    background: rgba(255, 255, 255, .4);
+
+}
+.container.title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+
+}
+.container.title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: #9b59b6;
+
+
+
+
+}
+.container form .details{
+    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.inputbox{
+    
+    font-weight: 200;
+    outline: none;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid  blue  ;
+    padding-left: 15px;
+    transition: 1s;
+
+    /* width: calc(100%/2- 20px ); */
+
+}
+.inputbox:focus{
+    border-color: 513e64;
+    box-shadow: 0 0 8px darkviolet;
+}
+.submit{
+    position: relative;
+    right: -300px;
+    bottom: -10px;
+    font-family: 'Bungee', cursive;
+}
+.title{
+    font-family: 'Bungee', cursive;
+}
+.jinja{
+    font-family: 'Bungee', cursive;
+}
+.h3{
+    font-family: 'Bungee', cursive;
+}
